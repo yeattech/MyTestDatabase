@@ -35,7 +35,8 @@ docker run --name my-test-mysql -v my-test-mysql-data:/var/lib/mysql -e MYSQL_RO
 
 - [LINK](https://hub.docker.com/r/ibmcom/db2)
 - Port: 50000
-- Username: root
+- Database: testdb
+- Username: db2inst1
 - Password: password
 
 ```
