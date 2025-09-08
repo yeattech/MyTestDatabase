@@ -28,7 +28,27 @@ docker start my-test-oraclesql
 
 ```
 # MySQL
-docker run --name my-local-mysql -v my-test-mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 mysql:lts
+docker run --name my-test-mysql -v my-test-mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 mysql:lts
 ```
 
-##
+## DB2
+
+- [LINK](https://hub.docker.com/r/ibmcom/db2)
+- Port: 50000
+- Username: root
+- Password: password
+
+```
+docker run --platform=linux/amd64 -itd --name my-local-db2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=password -e DBNAME=testdb -v my-test-db2-data:/database ibmcom/db2
+```
+
+## MSSQL
+
+- [LINK](https://hub.docker.com/r/microsoft/mssql-server)
+- Port: 1433
+- Username: sa
+- Password: password
+
+```
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Password123" -e "MSSQL_PID=Evaluation" -p 1433:1433  --name my-test-mssql --hostname mssqlhost -d mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+```
