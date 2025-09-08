@@ -12,6 +12,8 @@
 
 ```
 docker run -d -p 1521:1521 -e ORACLE_PASSWORD=password --name my-test-oraclesql -v my-test-oraclesql-data:/opt/oracle/oradata gvenzl/oracle-free gvenzl/oracle-free:23
+
+docker start my-test-oraclesql
 ```
 
 ## MySQL
